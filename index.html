@@ -647,24 +647,46 @@ footer {
 <!-- ================================================
      JAVASCRIPT
      ================================================ -->
-<script>
+<script type="module">
+
+  // 🔥 Firebase import
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+
+  // 🔥 Firebase config
+  const firebaseConfig = {
+    apiKey: "XXXX",
+    authDomain: "XXXX",
+    projectId: "XXXX",
+    appId: "XXXX"
+  };
+
+  // 🔥 Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  console.log("Firebase Connected 🚀");
+
+
   // --- Custom Cursor ---
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
+
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top  = e.clientY + 'px';
+
     setTimeout(() => {
       ring.style.left = e.clientX + 'px';
       ring.style.top  = e.clientY + 'px';
     }, 60);
   });
+
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(2)';
       ring.style.transform   = 'translate(-50%, -50%) scale(1.5)';
       ring.style.opacity     = '1';
     });
+
     el.addEventListener('mouseleave', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
       ring.style.transform   = 'translate(-50%, -50%) scale(1)';
@@ -680,20 +702,24 @@ footer {
       }
     });
   }, { threshold: 0.12 });
+
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // --- Contact Form Submit ---
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.btn-submit');
+
     btn.textContent = '✓ Message Sent!';
     btn.style.background = '#4CAF50';
+
     setTimeout(() => {
       btn.textContent = 'Send Message →';
       btn.style.background = '';
       e.target.reset();
     }, 3000);
   }
+
 </script>
 </body>
 </html>
