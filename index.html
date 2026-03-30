@@ -39,7 +39,45 @@
   --muted:      #7A6648;
   --white:      #FDFAF4;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
 /* ================================================
    RESET & BASE
    ================================================ */
@@ -122,6 +160,70 @@ nav {
 /* ================================================
    HERO SECTION
    ================================================ */
+     <section id="hero">
+<section id="lead-form">
+  <h2>Get Free Admission Strategy</h2>
+
+  <form id="form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+     <section>
+  <h2>Results We Deliver</h2>
+  <p>100+ Admissions in 60 Days</p>
+  <p>5000+ Leads Generated</p>
+</section>
+  <!-- Background circles -->
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT CONTENT -->
+      <div class="col">
+        <div class="hero-eyebrow">EDUBOOST AGENCY</div>
+
+        <h1>
+          Grow Your <em>School Admissions</em> Faster
+        </h1>
+
+        <p class="hero-sub">
+          We help schools and businesses generate high-quality leads using ads, AI content & proven strategies.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Get Started</a>
+          <a href="#" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Hero Image">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5000+</div>
+      <div class="stat-label">Leads</div>
+    </div>
+  </div>
+
+  <!-- SCROLL TEXT -->
+  <div class="scroll-line">Scroll Down</div>
+
+</section>
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
@@ -178,7 +280,7 @@ h1 em { font-style: italic; color: var(--gold); }
   border: 1.5px solid var(--warm); color: var(--deep);
   padding: 15px 32px; font-size: 0.9rem;
   font-family: 'DM Sans', sans-serif; font-weight: 500;
-  background: transparent; border-radius: 2px; cursor: none;
+  background: transparent; border-radius: 2px; cursor: pointer;
   letter-spacing: 0.04em; text-transform: uppercase;
   transition: all 0.3s; text-decoration: none; display: inline-block;
 }
